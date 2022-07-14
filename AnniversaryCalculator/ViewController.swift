@@ -19,20 +19,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 14.0, *) {
-            myDatePickerStyle.preferredDatePickerStyle = .inline
-        }
+//        if #available(iOS 14.0, *) {
+//            myDatePickerStyle.preferredDatePickerStyle = .inline
+//        }
         // else로 14버전 아래를 처리하면 오류가 뜬다.
         // 컴파일 에러에서 Fix하면 아래처럼 추가하라고 하는데 이러다 모든 버전 다 추가할듯...
         
-//        if #available(iOS 14.0, *) {
-//            myDatePickerStyle.preferredDatePickerStyle = .inline
-//        } else {
-//            if #available(iOS 13.4, *) {
-//                myDatePickerStyle.preferredDatePickerStyle = .wheels
-//            } else {
-//            }
-//        }
+        // 와우 해결 13.4 버전 이하에서는 .datePickerMode이걸로 써줘야함. -> 모든 버전을 다르게 처리할 수 있게됐따..
+        if #available(iOS 14.0, *) {
+            myDatePickerStyle.preferredDatePickerStyle = .inline
+        } else {
+            if #available(iOS 13.4, *) {
+                myDatePickerStyle.preferredDatePickerStyle = .wheels
+            } else {
+                myDatePickerStyle.datePickerMode = .countDownTimer
+            }
+        }
         
         setImages(list: ImageList, to: 3)
         
