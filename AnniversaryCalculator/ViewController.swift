@@ -19,9 +19,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if #available(iOS 14.0, *) {
-//            myDatePickerStyle.preferredDatePickerStyle = .inline
-//        }
+        //        if #available(iOS 14.0, *) {
+        //            myDatePickerStyle.preferredDatePickerStyle = .inline
+        //        }
         // else로 14버전 아래를 처리하면 오류가 뜬다.
         // 컴파일 에러에서 Fix하면 아래처럼 추가하라고 하는데 이러다 모든 버전 다 추가할듯...
         
@@ -79,6 +79,19 @@ func setImages(list: [UIImageView]?, to last: Int) {
     for i in 0...last {
         list?[i].tag = i
         list?[i].image = UIImage(named: "image\(i)")
+        list?[i].layer.cornerRadius = 20
+        
+        // 그림자 효과 더 알아보기
+        
+        //
+        //        var bulrEffect = UIBlurEffect(style: .dark)
+        // var blurView = UIVisualEffectView(effect: bulrEffect)
+        //        blurView.frame = list?[i].bounds ?? .
+        //
+        
+        //        list?[i].layer.shadowOffset = .init(width: 178.0, height: 178.0)
+        //        list?[i].layer.shadowColor = UIColor.lightGray.cgColor
+        //        list?[i].layer.shadowOpacity = 0.6
     }
 }
 
