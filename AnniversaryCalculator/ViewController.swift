@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             if #available(iOS 13.4, *) {
                 myDatePickerStyle.preferredDatePickerStyle = .wheels
             } else {
-                myDatePickerStyle.datePickerMode = .countDownTimer
+                myDatePickerStyle.datePickerMode = .date
             }
         }
         
@@ -40,7 +40,12 @@ class ViewController: UIViewController {
         
         for i in dayList {
             i.text = "D + \(dayNumberList[i.tag])"
-            anniversaryDateList[i.tag].text = "우리의\n특별한 날" // tag 값이 똑같아서 기본값을 같이 지정해주었다.
+            i.textColor = UIColor.white
+            i.font = UIFont.systemFont(ofSize: 20.0, weight: .heavy)
+            anniversaryDateList[i.tag].text = "우리의\n특별한 날"
+            anniversaryDateList[i.tag].numberOfLines = 2
+            anniversaryDateList[i.tag].textAlignment = .center
+            anniversaryDateList[i.tag].textColor = UIColor.white// tag 값이 똑같아서 기본값을 같이 지정해주었다.
         }
     }
     
@@ -50,8 +55,6 @@ class ViewController: UIViewController {
     @IBAction func changeDate(_ sender: UIDatePicker) {
         
         for date in anniversaryDateList { // 기념일이 나오는 레이블입니다
-            date.numberOfLines = 2
-            date.textAlignment = .center
             date.text = plusDay(sender: sender, add: dayNumberList[date.tag])
         }
     }
@@ -64,6 +67,7 @@ func plusDay(sender: UIDatePicker, add: Int) -> String {
     formatter.locale = Locale(identifier: "ko_KR")
     formatter.dateFormat = "yyyy년\nMM월 dd일"
     
+    // 클로저를 사용해서 더 간결하게 갈 수 있지 않을까 puls함수를 클로저로 대체..하는...무슨 방법이 있지 ..않을가..
     let plusday = Calendar.current.date(byAdding: .day, value: add, to: anniversaryDate)
     
     return formatter.string(from: plusday!)

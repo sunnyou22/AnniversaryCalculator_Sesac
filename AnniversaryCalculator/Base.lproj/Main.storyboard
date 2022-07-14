@@ -90,6 +90,12 @@
                                     <constraint firstAttribute="width" secondItem="Ywe-eS-irE" secondAttribute="height" id="fko-VB-cz9"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1nv-nB-p3h">
+                                <rect key="frame" x="20" y="665" width="177" height="177"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1nv-nB-p3h" secondAttribute="height" id="vlw-om-PMu"/>
+                                </constraints>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JQE-bz-tSq">
                                 <rect key="frame" x="217" y="665" width="177" height="177"/>
                                 <constraints>
@@ -168,12 +174,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1nv-nB-p3h">
-                                <rect key="frame" x="20" y="665" width="177" height="177"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="1nv-nB-p3h" secondAttribute="height" id="vlw-om-PMu"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IaQ-yq-ZBp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
