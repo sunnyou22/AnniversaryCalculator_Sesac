@@ -221,6 +221,7 @@
                     </view>
                     <connections>
                         <outlet property="myDatePickerStyle" destination="da3-4E-KR1" id="eyz-bX-riI"/>
+                        <outlet property="seletday" destination="da3-4E-KR1" id="ILX-8g-SSI"/>
                         <outletCollection property="ImageList" destination="Pis-Bs-NoP" collectionClass="NSMutableArray" id="mPG-CS-LgQ"/>
                         <outletCollection property="ImageList" destination="Ywe-eS-irE" collectionClass="NSMutableArray" id="a3G-lm-OtB"/>
                         <outletCollection property="ImageList" destination="1nv-nB-p3h" collectionClass="NSMutableArray" id="W4P-qM-57C"/>

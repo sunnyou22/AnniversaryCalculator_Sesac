@@ -9,15 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
     var dayNumberList = [100, 200, 300, 400] // 표시하고 싶은 기념일 배열 -> 변수로 선언하지 않고 다르게 처리할 수 있는 방법이 없을까
+    let formatter = DateFormatter()
     
     @IBOutlet var ImageList: [UIImageView]!
     @IBOutlet weak var myDatePickerStyle: UIDatePicker!
     @IBOutlet var dayList: [UILabel]!
     @IBOutlet var anniversaryDateList: [UILabel]!
+    @IBOutlet weak var seletday: UIDatePicker!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "yyyy년\nMM월 dd일"
         
         //        if #available(iOS 14.0, *) {
         //            myDatePickerStyle.preferredDatePickerStyle = .inline
@@ -42,7 +46,8 @@ class ViewController: UIViewController {
             i.text = "D + \(dayNumberList[i.tag])"
             i.textColor = UIColor.white
             i.font = UIFont.systemFont(ofSize: 20.0, weight: .heavy)
-            anniversaryDateList[i.tag].text = "우리의\n특별한 날"
+//            anniversaryDateList[i.tag].text = "우리의\n특별한 날"
+            anniversaryDateList[i.tag].text = formatter.string(from: seletday.date)
             anniversaryDateList[i.tag].numberOfLines = 2
             anniversaryDateList[i.tag].textAlignment = .center
             anniversaryDateList[i.tag].textColor = UIColor.white// tag 값이 똑같아서 기본값을 같이 지정해주었다.
