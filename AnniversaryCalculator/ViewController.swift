@@ -46,6 +46,7 @@ class ViewController: UIViewController {
             i.text = "D + \(dayNumberList[i.tag])"
             i.textColor = UIColor.white
             i.font = UIFont.systemFont(ofSize: 20.0, weight: .heavy)
+           // 글자수에 맞게 레이블 크기가 줄어들도록 하는 코드 적기  -> minimum Font Scale
 //            anniversaryDateList[i.tag].text = "우리의\n특별한 날"
             anniversaryDateList[i.tag].text = formatter.string(from: seletday.date)
             anniversaryDateList[i.tag].numberOfLines = 2
@@ -70,7 +71,7 @@ func plusDay(sender: UIDatePicker, add: Int) -> String {
     let anniversaryDate = sender.date
     let formatter = DateFormatter()
     formatter.locale = Locale(identifier: "ko_KR")
-    formatter.dateFormat = "yyyy년\nMM월 dd일"
+    formatter.dateFormat = #"yyyy년\#nMM월 dd일"#
     
     // 클로저를 사용해서 더 간결하게 갈 수 있지 않을까 puls함수를 클로저로 대체..하는...무슨 방법이 있지 ..않을가..
     let plusday = Calendar.current.date(byAdding: .day, value: add, to: anniversaryDate)
